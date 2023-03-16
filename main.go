@@ -25,7 +25,14 @@ func main() {
 		}
 		publicKeyBytes := crypto.FromECDSAPub(publicKeyECDSA)
 		address := crypto.PubkeyToAddress(*publicKeyECDSA).Hex()
-		if strings.HasPrefix(address, "0x00000") {
+		if strings.HasPrefix(address, "0x00000") ||
+			strings.HasPrefix(address, "0x66666") ||
+			strings.HasPrefix(address, "0x88888") ||
+			strings.HasPrefix(address, "0x23333") ||
+			strings.HasPrefix(address, "0x99999") ||
+			strings.HasPrefix(address, "0x55555") ||
+			strings.HasPrefix(address, "0x77777") ||
+			strings.HasPrefix(address, "0x12345") {
 			fmt.Printf("----------------------------\n")
 			fmt.Printf("Time: %v\n", time.Now().Format("2006-01-02 15:04:05"))
 			fmt.Printf("Private: %v\n", hexutil.Encode(privateKeyBytes)[2:]) // 0xfad9c8855b740a0b7ed4c221dbad0f33a83a49cad6b3fe8d5817ac83d38b6a19
